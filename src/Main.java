@@ -16,4 +16,6 @@ void main() {
 
 	IO.println(utilisateurs.rechercherUtilisateurParId("jdupont"));
 
+	utilisateurs.creerUtilisateur("robert","roger","robert@gmail.com");
+    utilisateurs.afficherToutLesUtilisateur();
 }

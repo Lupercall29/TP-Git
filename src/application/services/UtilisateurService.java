@@ -4,6 +4,7 @@ import application.domaine.Utilisateur;
 import application.repositories.UtilisateurRepository;
 
 import java.util.Objects;
+import java.util.List;
 import java.util.Optional;
 
 public class UtilisateurService {
@@ -37,3 +38,12 @@ public class UtilisateurService {
 
 	}
 }
+
+	public void afficherToutLesUtilisateur(){
+		utilisateurRepository.getUtilisateurs().forEach(utilisateur -> IO.println(utilisateur.toString()));
+
+		}
+	}
+
+
+
