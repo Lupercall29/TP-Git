@@ -2,9 +2,6 @@ package application.services;
 
 import application.domaine.Etat;
 import application.domaine.Tache;
-import application.domaine.Utilisateur;
-import application.domaine.Etat;
-import application.domaine.Tache;
 import application.repositories.TacheRepository;
 
 import java.util.List;
@@ -37,13 +34,20 @@ public class TacheService {
 		IO.println(tacheAssigner.toString());
 	}
 
-	public void rechercherParUtilisateur(String identifiant){
-		List<Tache> tacheUtilisateur = tacheRepository.getTaches().stream()
-				.filter(tache -> tache.getIdUtilisateurAssigne()!=null && tache.getIdUtilisateurAssigne().equals(identifiant))
-				.toList();
-		tacheUtilisateur.forEach(tache -> IO.println(tache.toString()));
+    public void rechercherParUtilisateur(String identifiant){
+        List<Tache> tacheUtilisateur = tacheRepository.getTaches().stream()
+                .filter(tache -> tache.getIdUtilisateurAssigne()!=null && tache.getIdUtilisateurAssigne().equals(identifiant))
+                .toList();
+        tacheUtilisateur.forEach(tache -> IO.println(tache.toString()));
+    }
+
+	public void completerTache (int idTache) {
+		Tache tacheCompletee = tacheRepository.getTaches().stream()
+				.filter(tache -> tache.getId() == idTache)
+				.findAny()
+				.orElseThrow(()-> new RuntimeException("La tache n'existe pas."));
+
+		tacheCompletee.setEtat(Etat.TERMINEE);
 	}
-
-
 
 }
