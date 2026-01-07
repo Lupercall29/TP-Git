@@ -34,5 +34,4 @@ public void ajouterTache(Tache tache){
 		taches.add(tache);
 }
 
-
 }
