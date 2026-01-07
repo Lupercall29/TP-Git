@@ -45,6 +45,10 @@ public class Utilisateur {
 		this.courriel = courriel;
 	}
 
+	public String getID(){
+		return identifiant;
+	}
+
 	@Override
 	public String toString() {
 		return "Utilisateur{" +
