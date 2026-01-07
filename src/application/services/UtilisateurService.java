@@ -3,11 +3,6 @@ package application.services;
 import application.domaine.Utilisateur;
 import application.repositories.UtilisateurRepository;
 
-import java.util.Objects;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-
 public class UtilisateurService {
 
 	private final UtilisateurRepository utilisateurRepository;
@@ -48,8 +43,3 @@ public class UtilisateurService {
 		utilisateurRepository.getUtilisateurs().remove(utilisateurAsup);
 	}
 }
-
-
-
-
-
