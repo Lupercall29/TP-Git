@@ -5,11 +5,17 @@ import application.services.UtilisateurService;
 
 
 void main() {
+
 	TacheService taches = new TacheService();
 	UtilisateurService utilisateurs = new UtilisateurService();
 
 
 	//Placez vos appels de méthodes icicre
+
+	utilisateurs.modifierCourrielUtilisateur("jdupont", "dupont.jean@mail.com");
+
+	IO.println(utilisateurs.rechercherUtilisateurParId("jdupont"));
+
 	utilisateurs.creerUtilisateur("robert","roger","robert@gmail.com");
     utilisateurs.afficherToutLesUtilisateur();
 }

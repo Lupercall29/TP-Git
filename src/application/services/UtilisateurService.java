@@ -3,6 +3,7 @@ package application.services;
 import application.domaine.Utilisateur;
 import application.repositories.UtilisateurRepository;
 
+import java.util.Objects;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,13 +22,22 @@ public class UtilisateurService {
 		utilisateurRepository.getUtilisateurs().add(utilisateur);
 	}
 
-	public Optional<Utilisateur> rechercherUtilisateurParId (String id) {
+	public Utilisateur rechercherUtilisateurParId (String id) {
 
         return utilisateurRepository.getUtilisateurs().stream()
                 .filter(utilisateur -> utilisateur.getIdentifiant().equals(id))
-                .findAny();
+                .findAny()
+				.orElseThrow(()-> new RuntimeException("Utilisateur non trouvé"));
 	}
 
+	public void modifierCourrielUtilisateur (String id, String nouveauCourriel) {
+
+		Utilisateur utilisateurAModifier = rechercherUtilisateurParId(id);
+		utilisateurAModifier.setCourriel(nouveauCourriel);
+
+
+	}
+}
 
 	public void afficherToutLesUtilisateur(){
 		utilisateurRepository.getUtilisateurs().forEach(utilisateur -> IO.println(utilisateur.toString()));
