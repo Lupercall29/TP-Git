@@ -5,13 +5,11 @@ import application.services.UtilisateurService;
 
 
 void main() {
-	List<Utilisateur> listeUtilisateurs = new ArrayList<>();
-	List<Tache> listeTaches = new ArrayList<>();
-
 	TacheService taches = new TacheService();
 	UtilisateurService utilisateurs = new UtilisateurService();
 
 
 	//Placez vos appels de méthodes icicre
-
+	utilisateurs.creerUtilisateur("robert","roger","robert@gmail.com");
+    utilisateurs.afficherToutLesUtilisateur();
 }
