@@ -2,7 +2,10 @@ package application.services;
 
 import application.domaine.Etat;
 import application.domaine.Tache;
+import application.domaine.Utilisateur;
 import application.repositories.TacheRepository;
+
+import java.util.List;
 
 public class TacheService {
 
@@ -24,6 +27,13 @@ public class TacheService {
 		tacheAssigner.setEtat(Etat.EN_COURS);
 
 		IO.println(tacheAssigner.toString());
+	}
+
+	public void rechercherParUtilisateur(String identifiant){
+		List<Tache> tacheUtilisateur = tacheRepository.getTaches().stream()
+				.filter(tache -> tache.getIdUtilisateurAssigne()!=null && tache.getIdUtilisateurAssigne().equals(identifiant))
+				.toList();
+		tacheUtilisateur.forEach(tache -> IO.println(tache.toString()));
 	}
 
 

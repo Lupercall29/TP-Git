@@ -12,10 +12,11 @@ void main() {
 
 	//Placez vos appels de méthodes icicre
 
-	utilisateurs.modifierCourrielUtilisateur("jdupont", "dupont.jean@mail.com");
-
-	IO.println(utilisateurs.rechercherUtilisateurParId("jdupont"));
-
-	utilisateurs.creerUtilisateur("robert","roger","robert@gmail.com");
-    utilisateurs.afficherToutLesUtilisateur();
+//	utilisateurs.modifierCourrielUtilisateur("jdupont", "dupont.jean@mail.com");
+//
+//	IO.println(utilisateurs.rechercherUtilisateurParId("jdupont"));
+//
+//	utilisateurs.creerUtilisateur("robert","roger","robert@gmail.com");
+//    utilisateurs.afficherToutLesUtilisateur();
+	taches.rechercherParUtilisateur("jdupont");
 }
