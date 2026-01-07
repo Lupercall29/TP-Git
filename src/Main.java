@@ -18,4 +18,7 @@ void main() {
 
 	utilisateurs.creerUtilisateur("robert","roger","robert@gmail.com");
     utilisateurs.afficherToutLesUtilisateur();
+
+	TacheService tacheService = new TacheService();
+	tacheService.creationTache("test","je suis bien la tache test");
 }

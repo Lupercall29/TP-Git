@@ -29,4 +29,10 @@ public class TacheRepository {
 	public void setTaches(List<Tache> taches) {
 		this.taches = taches;
 	}
+
+public void ajouterTache(Tache tache){
+		taches.add(tache);
+}
+
+
 }
